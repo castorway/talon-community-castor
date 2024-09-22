@@ -6,6 +6,8 @@ from talon import Context, Module, app
 # path to community/knausj root directory
 REPO_DIR = os.path.dirname(os.path.dirname(__file__))
 SETTINGS_DIR = os.path.join(REPO_DIR, "settings")
+# path to secret settings dir for my words
+SECRET_SETTINGS_DIR = os.path.join("/home/sintacks/.talon/user/castor-talon/settings")
 
 mod = Module()
 ctx = Context()
@@ -15,24 +17,16 @@ mod.list(
 )
 
 _edit_files = {
-    "additional words": os.path.join(
-        REPO_DIR, "core", "vocabulary", "vocabulary.talon-list"
-    ),
-    "alphabet": os.path.join(REPO_DIR, "core", "keys", "letter.talon-list"),
-    "homophones": os.path.join(REPO_DIR, "core", "homophones", "homophones.csv"),
-    "search engines": os.path.join(
-        REPO_DIR, "core", "websites_and_search_engines", "search_engine.talon-list"
-    ),
-    "unix utilities": os.path.join(
-        REPO_DIR, "tags", "terminal", "unix_utility.talon-list"
-    ),
-    "websites": os.path.join(
-        REPO_DIR, "core", "websites_and_search_engines", "website.talon-list"
-    ),
+    "additional words": os.path.join(SECRET_SETTINGS_DIR, "vocabulary.talon-list"),
+    "alphabet": os.path.join(SECRET_SETTINGS_DIR, "letter.talon-list"),
+    "homophones": os.path.join(SECRET_SETTINGS_DIR, "homophones.csv"),
+    "search engines": os.path.join(SECRET_SETTINGS_DIR, "search_engine.talon-list"),
+    "unix utilities": os.path.join(SECRET_SETTINGS_DIR, "unix_utility.talon-list"),
+    "websites": os.path.join(SECRET_SETTINGS_DIR, "website.talon-list"),
 }
 
 _settings_csvs = {
-    name: os.path.join(SETTINGS_DIR, file_name)
+    name: os.path.join(SECRET_SETTINGS_DIR, file_name)
     for name, file_name in {
         "abbreviations": "abbreviations.csv",
         "file extensions": "file_extensions.csv",

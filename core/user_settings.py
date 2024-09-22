@@ -7,6 +7,7 @@ from talon import resource
 # NOTE: This method requires this module to be one folder below the top-level
 #   community/knausj folder.
 SETTINGS_DIR = Path(__file__).parents[1] / "settings"
+SECRET_SETTINGS_DIR = Path("/home/sintacks/.talon/user/castor-talon/settings")
 
 if not SETTINGS_DIR.is_dir():
     os.mkdir(SETTINGS_DIR)
@@ -16,7 +17,7 @@ def get_list_from_csv(
     filename: str, headers: tuple[str, str], default: dict[str, str] = {}
 ):
     """Retrieves list from CSV"""
-    path = SETTINGS_DIR / filename
+    path = SECRET_SETTINGS_DIR / filename
     assert filename.endswith(".csv")
 
     if not path.is_file():
@@ -61,7 +62,7 @@ def get_list_from_csv(
 
 
 def append_to_csv(filename: str, rows: dict[str, str]):
-    path = SETTINGS_DIR / filename
+    path = SECRET_SETTINGS_DIR / filename
     assert filename.endswith(".csv")
 
     with open(str(path)) as file:
