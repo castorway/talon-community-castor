@@ -203,6 +203,9 @@ symbol_key_words = {
     "pipe": "|",
     "dub quote": '"',
     "double quote": '"',
+    "double": '"',
+    "semi": ";",
+    "cobra": ":",
     # Currencies
     "dollar": "$",
     "pound": "£",
@@ -239,6 +242,9 @@ alternate_keys = {
     "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
+    "ace": "space",
+    "shock": "enter",
+    "deli": "backspace",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
