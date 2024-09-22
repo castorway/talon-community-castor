@@ -1,1 +1,1 @@
-numb <user.number_string>: "{number_string}"
+dig <user.number_string>: "{number_string}"
