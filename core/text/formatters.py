@@ -221,6 +221,8 @@ formatter_list = [
     CustomFormatter("ALL_LOWERCASE", lambda text: text.lower()),
     CustomFormatter("COMMA_SEPARATED", lambda text: re.sub(r"\s+", ", ", text)),
     CustomFormatter("REMOVE_FORMATTING", remove_code_formatting),
+    # Custom formatter for the way that I text         
+    CustomFormatter("CHAT_FORMAT", lambda text: re.sub("('|\")", "", text).lower()),
     TitleFormatter("CAPITALIZE_ALL_WORDS"),
     # The sentence formatter being called `CAPITALIZE_FIRST_WORD` is a bit of a misnomer, but kept for backward compatibility.
     SentenceFormatter("CAPITALIZE_FIRST_WORD"),
@@ -259,6 +261,7 @@ code_formatter_names = {
     "snake": "SNAKE_CASE",
     "string": "SINGLE_QUOTED_STRING",
     "constant": "ALL_CAPS,SNAKE_CASE",
+    "chat": "CHAT_FORMAT",
 }
 prose_formatter_names = {
     "say": "NOOP",

@@ -1,3 +1,6 @@
+app: libreoffice calc
+-
+
 box top left:
     key(ctrl-home)
 
