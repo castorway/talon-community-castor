@@ -1,5 +1,4 @@
-app: libreoffice calc
--
+
 
 box top left:
     key(ctrl-home)
@@ -28,7 +27,7 @@ cell down:
 take home:
     key(shift-home)
 
-take end:
+take end:*
     key(shift-end)
 
 take row:
